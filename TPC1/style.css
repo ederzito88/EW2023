@@ -1,0 +1,48 @@
+.iogurte {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+  }
+
+  h1 {
+    text-align: center; /* centraliza o texto */
+    font-size: 3rem; /* tamanho da fonte */
+    font-weight: bold; /* define a espessura da fonte como negrito */
+    font-family: "Helvetica Neue", sans-serif; /* define a família da fonte */
+    color: #333; /* define a cor do texto */
+    text-transform: uppercase; /* transforma todo o texto em maiúsculo */
+    letter-spacing: 0.1em; /* define o espaçamento entre as letras */
+    line-height: 1.2; /* define a altura da linha para melhor legibilidade */
+  }
+
+  h2 {
+    font-size: 2.5rem; /* tamanho da fonte */
+    font-weight: bold; /* define a espessura da fonte como negrito */
+    font-family: "Open Sans", sans-serif; /* define a família da fonte */
+    color: #333; /* define a cor do texto */
+    margin-left: 0; /* remove a margem padrão do elemento */
+    padding-left: 0; /* remove o preenchimento padrão do elemento */
+    border-left: 4px solid #e67e22; /* adiciona uma borda esquerda laranja */
+    line-height: 1.2; /* define a altura da linha para melhor legibilidade */
+  }
+
+h3{
+    text-align: center;
+}
+
+h5 {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
