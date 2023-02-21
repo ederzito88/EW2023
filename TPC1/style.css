@@ -45,4 +45,54 @@ h5 {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+h6 {
+    border: 2px solid #333;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display:flex;
+    justify-content: center;
+  }
+
+  .back-to-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 20px;
+    text-align: center;
+    right: 20px;
+    z-index: 9999; /* colocar acima de outros elementos */
+    background-color: #222; /* cor de fundo do botão */
+    color: #fff; /* cor do texto */
+    font-size: 16px; /* tamanho da fonte */
+    line-height: 1.5; /* altura da linha */
+    padding: 10px 20px; /* preenchimento interno */
+    margin-bottom: 10px;
+    border-radius: 5px; /* bordas arredondadas */
+    border: none; /* remover a borda */
+    cursor: pointer; /* alterar o cursor do mouse */
+    transition: opacity 0.3s ease-in-out; /* animação de transição de opacidade */
+  }
+  
+  /* Estilos para o botão de voltar ao início da página quando o mouse está em cima */
+  .back-to-top:hover {
+    background-color: #444; /* cor de fundo do botão ao passar o mouse */
+  }
+  
+  /* Estilos para exibir o botão de voltar ao início da página quando a página é rolada para baixo */
+  @media (min-width: 768px) {
+    .back-to-top.show {
+      display: block;
+      opacity: 0.8; /* opacidade do botão */
+    }
   }
