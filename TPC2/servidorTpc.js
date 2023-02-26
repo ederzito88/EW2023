@@ -30,9 +30,12 @@ http.createServer(function  (req, res) {
     fs.readFile(pedido+'.html', function (err,data) {
         res.writeHead(200, {'Content-Type': 'text/html'});
         if(err){
-            res.write('Erro na leitura do ficheiro' + err)
+            res.write('Erro na leitura do ficheiro ' + err)
         }
-        res.write(data)
+        else{
+            res.write(data)
+        }
+        
         res.end();
 
     })
