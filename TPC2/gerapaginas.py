@@ -47,11 +47,14 @@ for cidade in cidades:
         f.write(f'<p><b>Descrição:</b> {cidade["descrição"]}</p>\n')
         f.write(f'<p><b>Distrito:</b> {cidade["distrito"]}</p>\n')
         f.write(f'<p><b>Ligações:</b></p>\n')
+        f.write('<ul>')
         for l in ligacoes:
             if l['origem'] == cidade['id']:
                 f.write(f"<li><a href='/{dictNomes[l['destino']].replace(' ','')}'>{dictNomes[l['destino']]}</a> : {l['distância']}km</li>")
+        f.write('</ul>')
         f.write('</body>\n')
         f.write('</html>\n')
+        
 
     #os.remove(f"{remove_non_ascii(cidade['nome'].replace(' ',''))}.html") #for cleaning wrong files while testing
     
