@@ -1,0 +1,10 @@
+TPC
+(Resolver problema de css)
+
+-GET / - responder com uma paǵina com cojnto de opções:
+    1. lista de pessoas
+    2. distribuição por sexo (quando se clica no número, mostra a lista de pessoas desse sexo)
+    3. distriubuição por desporto praticado (mesma maneira)
+    4. Top 10 de profissões (clicando temos a lista)
+
+Links para voltar à main page (no topo e em baixo)
