@@ -3,7 +3,7 @@ exports.homePage = function(tasks,users,d){
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ToDo List</title>
+        <title>My ToDo List</title>
         <meta charset="UTF-8"/>
         <link rel="icon" href="favicon.png"/>
         <link rel="stylesheet" href="w3.css"/>
@@ -11,15 +11,15 @@ exports.homePage = function(tasks,users,d){
     <body>
         <div class="w3-card-4 w3-border w3-round-xlarge">
             <header class="w3-container w3-green" style="display:flex">
-                <h2 style="width:100%">ToDo Form</h2>
-                <button class="w3-button w3-right"><a href="users/adduser">Add a new user</a></button>
+                <h2 style="width:100%">My ToDo List</h2>
+                <button class=""w3-btn w3-hover-light-grey w3-white w3-round-xlarge w3-right w3-large w3-padding-large"><a href="users/adduser">Add User</a></button>
             </header>
             <form class="w3-container" method="POST">
                 <fieldset>
                     <label class="w3-text-blue-gray">Limit Date</label>
                     <input class="w3-input w3-round" type="date" name="date">
                     <br/>
-                    <label class="w3-text-blue-gray">Who's going to do it</label>
+                    <label class="w3-text-blue-gray">Who's gonna do it</label>
                     <select class="w3-select w3-round" type="text" name="who">
                         <option value="" disabled selected>Choose who will do the task here</option>`
         for(let i=0; i<users.length; i++){
@@ -64,7 +64,7 @@ exports.homePage = function(tasks,users,d){
                 </ul>
             </div>
             <div class="w3-panel w3-border w3-round-large" style="width:50%">
-                <h3>Done List</h3>
+                <h3>Done✔️</h3>
                 <ul  class="w3-ul w3-border">`
                 
         for(let i =0; i<tasks.length; i++){
@@ -154,7 +154,7 @@ exports.confirmFormPage = function(task,d){
     </head>
     <body>
         <header class="w3-container w3-green">
-            <h2>New task added!</h2>
+            <h2>Task added successfully</h2>
         </header>
         <table class="w3-table w3-table-all">
             <tr>
@@ -204,7 +204,7 @@ exports.confirmUserFormPage = function(user,d){
     return pagHTML
 }
 
-exports.editTaskFormPage = function(task,d){
+exports.editTaskFormPage = function(task,users, d){
     var pagHTML = `
 <!DOCTYPE html>
 <html>
@@ -225,7 +225,21 @@ exports.editTaskFormPage = function(task,d){
                     <input class="w3-input w3-round" type="date" name="date" value=${task.date}>
                     <br/>
                     <label class="w3-text-blue-gray">Who's going to do it</label>
-                    <input class="w3-input w3-round" type="text" name="who" placeholder="Write who will do the task here" value="${task.who}">
+                    <select class="w3-select w3-round" type="text" name="who">
+                        <option value="" disabled selected>Choose who will do the task here</option>`
+        for(let i=0; i<users.length; i++){
+            if(task.who==users[i].name){
+                pagHTML+=`
+                        <option value="${users[i].name}" selected>${users[i].name}</option>
+            `
+            }else{
+            pagHTML+=`
+                        <option value="${users[i].name}">${users[i].name}</option>
+            `
+            }
+        }
+        pagHTML+=`                    
+                    </select>
                     <br/>
                     <label class="w3-text-blue-gray">Task description</label>
                     <input class="w3-input w3-round" type="text" name="what" placeholder="Write your task description here" value="${task.what}"></input>

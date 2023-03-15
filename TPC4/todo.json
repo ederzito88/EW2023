@@ -15,21 +15,25 @@
     {
       "id": 4,
       "name": "João Ferreira"
+    },
+    {
+      "id": 5,
+      "name": "Dona Ofélia"
     }
   ],
   "tasks": [
-    {
-      "id": 2,
-      "date": "2023-03-15",
-      "who": "Tiago Ferreira",
-      "what": "levar o lixo",
-      "done": true
-    },
     {
       "id": 3,
       "date": "2023-05-10",
       "who": "João Ferreira",
       "what": "Ir ao talho",
+      "done": true
+    },
+    {
+      "id": 4,
+      "date": "2023-05-30",
+      "who": "Mariana Silva",
+      "what": "Porrada",
       "done": false
     }
   ]

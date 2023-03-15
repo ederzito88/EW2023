@@ -59,18 +59,22 @@ var todoServer = http.createServer(function (req, res) {
                 }
                 else if(/\/tasks\/edit(\/done|\/todo)\/[0-9]+$/.test(req.url)){
                     var idTask = req.url.split("/")[4]
-                    axios.get("http://localhost:3000/tasks/" + idTask)
-                        .then( response => {
-                            let task = response.data
-                            res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
-                            res.write(mypages.editTaskFormPage(task,d))
-                            res.end()
-                        })
-                        .catch(function(erro){
-                            res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
-                            res.write(mypages.errorPage(`Could not get task ${idTask} Erro: ` + erro))
-                            res.end()
-                        })
+                    axios.get("http://localhost:3000/tasks/"+idTask)
+                         .then(response => {
+                            axios.get("http://localhost:3000/users")
+                            .then(respuser => {
+                                var task = response.data
+                                var users = respuser.data
+                                res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                                res.write(mypages.editTaskFormPage(task,users,d))
+                                res.end()
+                            })
+                            .catch(erro => {
+                                res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                                res.write("<p>Unable to get list of users... Erro: " + erro)
+                                res.end()
+                            })
+                         })
                 }
                 else if(/\/tasks\/delete\/[0-9]+$/.test(req.url)){
                     var idTask = req.url.split("/")[3]
