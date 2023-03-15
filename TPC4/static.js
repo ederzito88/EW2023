@@ -2,7 +2,8 @@ const fs = require('fs');
 
 function staticResource(request){
     return /\/w3.css$/.test(request.url) || 
-            /\/favicon.png$/.test(request.url)
+            /\/favicon.png$/.test(request.url) ||
+            /\/todo.jpg$/.test(request.url)
 }
 
 exports.staticResource = staticResource
@@ -29,7 +30,11 @@ function serveStaticResource(req, res){
             else if(file.match(/(\w+\.png)$/) ){
                 res.setHeader('Content-Type', 'image/png')
                 res.end(dados)
-            }    
+            }
+            else if(file.match(/(\w+\.jpg)$/) ){
+                res.setHeader('Content-Type', 'image/jpg')
+                res.end(dados)
+            }       
         }
     })
 }
