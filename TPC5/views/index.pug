@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  h1= title
+  
+  head
+    title ToDo List
+    meta(charset='UTF-8')
+    link(rel='icon' href='favicon.png')
+    link(rel='stylesheet' href='public/w3.css')
+  .w3-card-4
+    header.w3-container.w3-blue-gray(style='display:flex')
+      h2(style='width:100%') ToDo Form
+      button.w3-button.w3-right Add a new user
+    form.w3-container(method='POST')
+      fieldset
+        label.w3-text-blue-gray Limit Date
+        input.w3-input.w3-round(type='date' name='date')
+        br
+        label.w3-text-blue-gray Who&apos;s going to do it
+        input.w3-input.w3-round(type='text' name='who' placeholder='Write who will do the task here')
+        br
+        label.w3-text-blue-gray Task description
+        textarea.w3-input.w3-round(name='desc' rows='3' cols='40' placeholder='Write your task description here')
+        br
+        button.w3-btn.w3-hover-light-grey.w3-blue-gray.w3-round-xlarge.w3-right.w3-large.w3-padding-large(type='submit') Submit
+  .w3-container(style='display:flex;')
+    .w3-panel.w3-border.w3-round-large(style='width:50%')
+      h3 ToDo List
+      ul.w3-ul.w3-border
+        li.w3-display-container
+          | Ovos
+          span.w3-display-right
+            button.w3-button.w3-round
+              a(href='#')
+              | Edit
+            button.w3-button.w3-round
+              a(href='#')
+              | Done
+        li.w3-display-container
+          | Arroz
+          span.w3-display-right
+            button.w3-button.w3-round
+              a(href='#')
+              | Edit
+            button.w3-button.w3-round
+              a(href='#')
+              | Done
+    .w3-panel.w3-border.w3-round-large(style='width:50%')
+      h3 Done List
+      ul.w3-ul.w3-border
+        li.w3-display-container.w3-light-grey
+          | Passear o C&atilde;o
+  
+  
