@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Tiago Ferreira"
+    },
+    {
+      "id": 2,
+      "name": "João Faria"
+    },
+    {
+      "id": 3,
+      "name": "Mariana Silva"
+    },
+    {
+      "id": 4,
+      "name": "João Ferreira"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 2,
+      "date": "2023-03-15",
+      "who": "Tiago Ferreira",
+      "what": "levar o lixo",
+      "done": true
+    },
+    {
+      "id": 3,
+      "date": "2023-05-10",
+      "who": "João Ferreira",
+      "what": "Ir ao talho",
+      "done": false
+    }
+  ]
+}
